@@ -22,6 +22,74 @@ module.exports = function (app, db) {
     // default limit
     let limit_count = 0;
 
+    /**
+     * @desc 크롤러
+     * @return POP LIST
+     */
+    app.get('/api/v0.1/getCrawler', function(req, res) {
+        var query_string = req.query.url;
+        console.log('query_string --> ' + query_string)
+        if(query_string == '/') {
+            var html =
+                '<!DOCTYPE html>'
+                + '<html>'
+                + '<head>'
+                + '<meta property="og:title" content="NodeStory 블로그에 오신것을 환영해열" />'
+                + '<meta property="og:url" content="http://nodestory.com" />'
+                + '<meta property="og:description" content="Come to NodeStory Blog of dreams and hope!" />'
+                + '<meta property="og:image" content="http://mblogthumb4.phinf.naver.net/20150415_183/durandot_1429090948123Hgeku_PNG/013.png?type=w2" />'
+                + '<meta property="fb:app_id" content="186709768436817"/>'
+                + '<meta name="twitter:card" content="summary" />'
+                + '<meta name="twitter:url" content="http://nodestory.com" />'
+                + '<meta name="twitter:title" content="NodeStory 블로그에 오신것을 환영해열" />'
+                + '<meta name="twitter:description" content="Come to NodeStory Blog of dreams and hope!" />'
+                + '<meta name="twitter:image" content="http://mblogthumb4.phinf.naver.net/20150415_183/durandot_1429090948123Hgeku_PNG/013.png?type=w2" />'
+                + '<meta name="twitter:site" content="@kimyearho" />'
+                + '<meta name="twitter:creator" content="@kimyearho" />'
+                + '</head>'
+                + '<body>'
+                + '<p>크롤링 테스트</p>'
+                + '<img src="http://mblogthumb4.phinf.naver.net/20150415_183/durandot_1429090948123Hgeku_PNG/013.png?type=w2">'
+                + '</body>'
+                + '</html>';
+            res.send(html);
+        } else {
+            var post_id = query_string.substring(query_string.lastIndexOf('/')+1);
+            db.query(postModel.postFindOne(), [post_id], function(err, rows) {
+                if(err) throw err;
+                let title = '';
+                if(rows[0].POST_TITLE == undefined) {
+                    title = '제목없음';
+                } else {
+                    title = rows[0].POST_TITLE;
+                }
+                var html =
+                    '<!DOCTYPE html>'
+                    + '<html>'
+                    + '<head>'
+                    + '<meta property="og:title" content="'+title+'" />'
+                    + '<meta property="og:url" content="http://nodestory.com/post/'+post_id+'" />'
+                    + '<meta property="og:description" content="Come to NodeStory Blog of dreams and hope!" />'
+                    + '<meta property="og:image" content="'+rows[0].SHARE_IMAGE+'" />'
+                    + '<meta property="fb:app_id" content="186709768436817"/>'
+                    + '<meta name="twitter:card" content="summary" />'
+                    + '<meta name="twitter:url" content="http://nodestory.com/post/'+post_id+'" />'
+                    + '<meta name="twitter:title" content="'+title+'" />'
+                    + '<meta name="twitter:description" content="Come to NodeStory Blog of dreams and hope!" />'
+                    + '<meta name="twitter:image" content="'+rows[0].SHARE_IMAGE+'" />'
+                    + '<meta name="twitter:site" content="@kimyearho" />'
+                    + '<meta name="twitter:creator" content="@kimyearho" />'
+                    + '</head>'
+                    + '<body>'
+                    + '<p>크롤링 테스트</p>'
+                    + '<img src="'+rows[0].SHARE_IMAGE+'">'
+                    + '</body>'
+                    + '</html>';
+                res.send(html);
+            });
+        }
+    });
+
     // 웹다매 앱 버전 체크 (임시)
     app.post('/api/v0.1/appVersionCheck', function (req, res) {
         let apikey = req.body.apiKey;

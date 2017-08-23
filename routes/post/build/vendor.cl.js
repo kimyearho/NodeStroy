@@ -147,13 +147,12 @@ var viewController =
         topMenuSpinTrigger();
 
         $scope.share = function (post) {
-            var local = 'http://nodestory.com';  // production
             ezfb.ui(
                 {
                     method: 'feed',
                     name: post.POST_TITLE,   // Feed 제목
                     picture: post.SHARE_IMAGE,    // Feed 이미지
-                    link: local+'/post/'+post.POST_SEQ,          // 공유 URL
+                    link: 'http://nodestory.com/post/'+post.POST_SEQ,          // 공유 URL
                     description: 'Come to NodeStory Blog of dreams and hope!' // Feed 내용
                 },
                 function (res) {
@@ -187,21 +186,6 @@ var viewController =
         }).error(function(data) {
             console.log('Error: ' + data);
         });
-
-    };
-
-var wdmController =
-    function
-        (
-            $scope,
-            $http,
-            $window,
-            $stateParams,
-            ngMeta
-        )
-    {
-
-        location.href = "http://nodestory.com/webtoonManager.html";
 
     };
 
@@ -276,7 +260,7 @@ var menuController =
     };
 
 
-const host = "localhost:8001";
+const host = "nodestory.com";
 
 // Angular Modules load
 var app = angular.module('nodeapp', [
@@ -384,7 +368,6 @@ var app = angular.module('nodeapp', [
     })
     .run(function($rootScope, $state, $location, $window, ngMeta, $sce, Socialshare) {
         ngMeta.init();
-        $window.ga('create', 'UA-86966651-1', 'auto');
         $rootScope.$on('$stateChangeSuccess', function (event) {
             $window.scrollTo(0, 0);
             $window.ga('send', 'pageview', $location.path());
@@ -422,19 +405,6 @@ var app = angular.module('nodeapp', [
             $('.wp-caption.aligncenter').removeAttr('style', 'width');
             return $sce.trustAsHtml(html_code);
         }
-
-        // 기본 페이스북 공유
-        $rootScope.share = function(post) {
-            var local = 'http://nodestory.com';  // production
-            FB.ui(
-                {
-                    method: 'feed', // 타입
-                    name: post.POST_TITLE,   // Feed 제목
-                    link: local+'/post/'+post.POST_SEQ,          // 공유 URL
-                    picture: local+'/'+post.MAIN_IMAGE,    // Feed 이미지
-                    description: 'Come to NodeStory Blog of dreams and hope!' // Feed 내용
-                });
-        };
 
         // 트위터 공유
         $rootScope.twitterShare = function(post) {
@@ -488,8 +458,7 @@ var app = angular.module('nodeapp', [
         };
     })
     .controller('viewCtrl', viewController)
-    .controller('menuCtrl', menuController)
-    .controller('wdmCtrl', wdmController);
+    .controller('menuCtrl', menuController);
 
 
 function topMenuSpinTrigger() {
