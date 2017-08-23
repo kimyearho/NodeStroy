@@ -205,3 +205,7 @@ body {
 .post-article {
 	padding: 0 40px 40px;
 }
+
+.unicard {
+	box-shadow: 8px 6px 6px 0px #212121;
+}

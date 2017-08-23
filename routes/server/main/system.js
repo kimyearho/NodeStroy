@@ -90,7 +90,7 @@ module.exports = function (app, db) {
         }
     });
 
-    // 웹다매 앱 버전 체크 (임시)
+    // 웹다매 앱 버전 체크
     app.post('/api/v0.1/appVersionCheck', function (req, res) {
         let apikey = req.body.apiKey;
         db.query("SELECT COUNT(*) AS count, VERSION as version FROM T_APP_VERSION WHERE APIKEY = ?", apikey, function (err, rows) {
