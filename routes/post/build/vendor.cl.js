@@ -425,12 +425,15 @@ var app = angular.module('nodeapp', [
 
         // 기본 페이스북 공유
         $rootScope.share = function(post) {
-            Socialshare.share({
-                'provider': 'facebook',
-                'attrs': {
-                    'socialshareUrl': 'http://nodestory.com/post/'+post.POST_SEQ,
-                }
-            });
+            var local = 'http://nodestory.com';  // production
+            FB.ui(
+                {
+                    method: 'feed', // 타입
+                    name: post.POST_TITLE,   // Feed 제목
+                    link: local+'/post/'+post.POST_SEQ,          // 공유 URL
+                    picture: local+'/'+post.MAIN_IMAGE,    // Feed 이미지
+                    description: 'Come to NodeStory Blog of dreams and hope!' // Feed 내용
+                });
         };
 
         // 트위터 공유
