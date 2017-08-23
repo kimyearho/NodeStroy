@@ -3,16 +3,6 @@
  */
 var mysql = require('mysql');
 
-/*
-var pool  = mysql.createPool({
-    connectionLimit : 300,
-    host            : 'localhost',
-    user            : 'root',
-    password        : '1234',
-    database        : 'nodestory'
-});
-*/
-
 var pool  = mysql.createPool({
     host            : '150.95.137.151',
     user            : 'kimyearho',
