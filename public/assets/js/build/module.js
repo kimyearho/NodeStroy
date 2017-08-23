@@ -38,6 +38,12 @@ var ap4 = new APlayer({
             pic: 'assets/music/cover/Tokyo Ghoul OST - Glassy Sky.jpg'
         },
         {
+            title: 'Tokyo Ghoul OST - Light and Shadow',
+            author: '',
+            url: 'assets/music/Tokyo Ghoul OST - Light and Shadow.mp3',
+            pic: 'assets/music/cover/tyo.jpg'
+        },
+        {
             title: 'FullMetal Alchemist - Ray Of Light',
             author: '',
             url: 'assets/music/FullMetal Alchemist-Ray Of Light Theme(5th ED).mp3',

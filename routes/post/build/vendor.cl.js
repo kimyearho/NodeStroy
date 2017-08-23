@@ -276,7 +276,7 @@ var menuController =
     };
 
 
-const host = "nodestory.com";
+const host = "localhost:8001";
 
 // Angular Modules load
 var app = angular.module('nodeapp', [

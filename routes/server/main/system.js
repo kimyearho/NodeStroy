@@ -237,10 +237,15 @@ module.exports = function (app, db) {
      *  @return 성공 1 / 실패 0
      */
     app.post('/api/v0.1/insertPost', function (req, res) {
+
+        let html = removeHtml(req.body.postContents);
+        let nonBody = html.substring(0, 130);
+
         let array_params = [
             req.body.postMark,
             req.body.postSubject,
             req.body.postContents,
+            nonBody,
             'images/profile/profile.gif',
             req.body.postCoverImage,
             req.body.origin_url,
@@ -313,6 +318,12 @@ module.exports = function (app, db) {
             });
         });
     });
+}
+
+let removeHtml = function(str) {
+    str = str.replace(/<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/g,"");
+    str = str.replace(/&nbsp;/gi,'');
+    return str;
 }
 
 /**
