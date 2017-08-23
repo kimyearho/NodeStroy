@@ -1,0 +1,75 @@
+<link href="assets/css/slider.css" rel="stylesheet">
+<div class="wrapper">
+
+<!-- Unicard -->
+<div class="unicard unicard-default post-highlight bdc-primary mgb-30 mgl-10 anim-fade">
+    <!-- unicard block -->
+    <div class="unicard-block post-header">
+        <h4 class="post-subtitle case-u fg-primary fw-bold">breaking story</h4>
+        <h2 class="post-title fw-bold fs-xs-250"><a style="cursor: pointer" ui-sref="postView({ id: breakNews[0].POST_SEQ })">{{breakNews[0].POST_TITLE}}</a></h2>
+        <div class="unimeta post-meta post-meta">
+            <span><i class="ti-time fg-text-l"></i>{{breakNews[0].TIMER}}</span>
+        </div>
+    </div>
+    <!-- /unicard block -->
+
+    <!-- unicard block -->
+    <div class="unicard-block">
+        <!-- unicard img -->
+        <div class="unicard-img">
+            <img ng-src="{{breakNews[0].MAIN_IMAGE}}">
+        </div>
+        <!-- /unicard img -->
+
+    </div>
+    <!-- /unicard block -->
+
+</div>
+<!-- /unicard -->
+
+<div style="margin-bottom: 30px;">
+    <!-- <a class="cursor" ng-href="http://nodestory.com/webtoonList" style="color: #fff;" target="_top">네이버웹툰 다운로드매니저 v1.3 버전을 만나보세요!</a> -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 메인광고 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2659362976819715"
+         data-ad-slot="8320821582"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<!-- Unicard -->
+<div class="unicard unicard-default pad-20 mgb-30 anim-fade">
+
+    <!-- post list -->
+    <ul id="postList" class="unimedia-list post-list mgb-20">
+
+        <li ng-repeat="list in mainPost" class="logEntry">
+            <!-- unimedia -->
+            <div class="unimedia-cell">
+                <div class="unimedia-img">
+                    <a class="img-link"><img class="cover-img" ng-src="{{list.MAIN_IMAGE}}" style="max-height: 134px !important;" alt="" /></a>
+                </div>
+            </div>
+            <div class="unimedia-cell cell-max">
+                <h5 class="unimedia-subtitle fg-accent hidden-xs" style="display:inline-block"><a>{{list.C_NAME}}</a></h5>
+                <span class="post_date"><i class="ti-time fg-text-l"></i> {{list.TIMER}}</span>
+                <h4 class="unimedia-title"><a style="cursor: pointer;" ui-sref="postView({ id: list.POST_SEQ })">{{list.POST_TITLE}}</a></h4>
+                <div class="unimeta post-meta hidden-xs" style="font-size: 12px;">
+                    {{list.NONE_BODY}} <a class="post_link" ui-sref="postView({ id: list.POST_SEQ })">더보기</a>
+                </div>
+            </div>
+            <!-- /unimedia -->
+        </li>
+
+    </ul>
+    <!-- /post list -->
+
+    <a id="load" class="btn btn-block btn-primary btn-pad-xl case-u" page="6" ng-click="nextPage()">더 보기</a>
+
+</div>
+
+</div>

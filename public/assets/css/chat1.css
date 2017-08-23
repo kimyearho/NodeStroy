@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+div.message-data.align-right{
+    text-align:right;
+}
+
+div.message.other-message.float-right{
+    float:right;
+}
+
+.pbody {
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.content {
+	margin-top: 10px;
+}
+.noticeChatLine {
+	margin: 0px;
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+}
+.chatArea {
+	margin-left: 15px;
+    height: 550px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.chatPanel {
+	height: 150px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.chatLine {
+	margin: 0px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.userAlram {
+	color: red;
+	margin: 0px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-left: 15px;
+}
+.userList {
+	 height: auto;
+     overflow-x: hidden;
+     overflow-y: auto;
+}
+.userList option {
+	padding:10px;
+}
+.addUser {
+	text-align:center;
+	margin-top: 10px;
+    font-weight: 700;
+    color: #3F51B5;
+}
+.exitUser {
+	text-align:center;
+	margin-top: 10px;
+    font-weight: 700;
+    color: #ca0909;
+}
+#btn {
+	 padding: 0 25px 0 25px !important
+}
+.profile {
+	width: 30px;
+    margin-right: 10px;
+}
+.name {
+	display: block;
+}
+.display-hidden {
+	display:none;
+}
+.nick_send {display: block; margin-left: 200px; }
+
+/*
+.panel-heading{background-color: #F05722 !important; color:#fff;}
+.panel-info{border-color:#f6a082;}
+.btn-info{color:#fff; background-color:#F05722; border-color: #fac4b1;}
+*/
+.input-group > textarea,
+.input-group > span.input-group-btn > a{height:50px;}
+.chat-content{white-space: pre-wrap;}
+.input-group > textarea{resize: none}
+.input-group > span.input-group-btn > a{line-height: 50px; }
+
+div.panel{
+    background:#C5DDEB;
+    border: 1px solid #ddd;
+}
+
+div.top-panel{
+    padding:20px;
+    border-bottom:2px solid white;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+    background:#444753;
+}
+
+div.center-panel{
+    padding:30px 30px 20px 0px;
+    border-bottom:2px solid white;
+    overflow-y:auto;
+    overflow-x:hidden;
+    height:480px;
+}
+
+div.chat-about{
+    float:left;
+}
+
+img.img-circle.chat-profile{
+    float:left;
+}
+
+div.chat-status{
+    padding:7px;
+    margin-left:10px;
+}
+
+p.chat-name{
+    font-weight:700;
+    font-size:16px;
+}
+
+p.chat-online{
+    color:#92959E;
+}
+
+section.userPanel{
+    background:#444753;
+}
+
+div.footer-panel{
+    padding:25px;
+}
+
+textarea.form-control.chat-message{
+    width:100%;
+    border:none;
+    padding:20px 10px 20px 10px;
+    font:14px/22px "Lato", Arial, sans-serif;
+    margin-bottom:10px;
+    border-radius:5px;
+    resize:none;
+    float:left;
+}
+
+a.btn-send {
+    float:right;
+    color:#94C2ED;
+    font-size:16px;
+    text-transform:uppercase;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    background:#F2F5F8;
+}
+
+i.fa.fa-image.icon-image{
+    margin-left:10px;
+    font-size:16px;
+    color:#dd4949;
+}
+
+i.fa.fa-users.icon-users{
+    font-size:16px;
+    color:#94C2ED;
+}
+
+div.user-list{
+    padding:23px;
+}
+
+input.search-user{
+    border-radius:3px;
+    border:none;
+    padding:14px;
+    color:white;
+    background:#6A6C75;
+    width:87%;
+    font-size:14px;
+    margin-left:5px;
+}
+
+i.fa.fa-search.search-user-icon{
+    position:relative;
+    left:-25px;
+    color:#fff;
+}
+
+div.message-data.align-right{
+    text-align:right;
+}
+
+span.message-data-time{
+    color:#a8aab1;
+    padding-left:6px;
+}
+
+i.fa.fa-circle.me{
+    color:#94c2ed;
+    margin-right:3px;
+}
+
+div.message.other-message.float-right{
+    float:right;
+    max-width: 130px;
+    word-break: break-all;
+    background-color: #2196F3;
+    padding: 7px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+div.message.my-message {
+    float:left;
+    max-width: 130px;
+    word-break: break-all;
+    background-color: #8BC34A;
+    padding: 7px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+div.message.other-message:after{
+    left:85%;
+}
+
+i.fa.fa-circle.online{
+    color:#86BB71;
+}
+
+ul.people-list{
+    padding:20px 10px 20px 21px;
+}
+
+img.img-circle.user-profile{
+    float:left;
+    margin-right:2px;
+}
+
+div.about{
+    float:left;
+    margin-top:8px;
+    padding-left:7px;
+}
+
+i.fa.fa-circle.online.you{
+    margin-right:5px;
+    color:#94C2ED;
+}
+
+div.status{
+    font-size:12px;
+}
+
+div.name{
+    font-weight:700;
+    font-size:15px;
+    color:#337ab7;
+    display: inline-block;
+}
+
+.nickchange {
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.addUserList {
+    font-weight: 700;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.53);
+}
+
+span.status-you{
+    color:#82848E;
+    margin-left:3px;
+}
+
+div.user-panel{
+    overflow-y:auto;
+    overflow-x:hidden;
+    height:481px;
+}
+
+div.chat-me-name{
+    font-size:15px;
+    font-weight:700;
+    color:#fff;
+}
+
+div.chat-status{
+}
+
+i.fa.fa-circle.top-me{
+    color:#94C2ED;
+    margin-right:3px;
+}
+
+i.fa.fa-circle.online.panel-user{
+    color:#86BB71;
+    margin-right:5px;
+    font-size:11px;
+}
+
+ul.people-list li{
+    padding-bottom:20px;
+}
+
+i.fa.fa-align-justify.chat-menu{
+    float:right;
+    color:#fff;
+    font-size:20px;
+    margin-top:12px;
+}
+
+i.fa.fa-bell.chat-alram{
+    float:right;
+    color:#fff;
+    font-size:20px;
+    margin-top:12px;
+    margin-right:20px;
+}
+
+h3.title-h3{
+    background:#C5DDEB;
+    border:none;
+    font-family:Vladimir Script;
+    font-size:40px;
+}
+
+a.cursor{
+    cursor:pointer;
+}
+
+a.cursor i:hover{
+    color:red;
+}
+
+i.fa.fa-align-justify.chat-menu:hover{
+    color:red;
+}
+
+i.fa.fa-bell.chat-alram:hover{
+    color:rgb(249,241,40);
+}
+
+div#carousel-1.carousel.slide{
+    height:180px;
+}
+
+a.product-image img:hover{
+    border:3px solid rgb(67,138,245);
+}
+
+button.close{
+    display:none;
+}
+
+img.cursor{
+    cursor:pointer;
+}
+
+#btn_userList {
+    border-radius: 4px;
+}
+
+#btn_msgRemove {
+    border-radius: 4px;
+}
+
+#userback {
+    margin-left: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+

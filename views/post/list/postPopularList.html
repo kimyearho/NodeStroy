@@ -1,0 +1,21 @@
+<style>
+    .title {
+        font-family: 'Noto Sans KR',sans-serif !important;
+        font-weight: 700;
+    }
+</style>
+<h4 class="case-u fw-bold fg-primary">＃popular</h4>
+    <!-- post list -->
+    <ul class="unimedia-list post-list-sm">
+        <li ng-animate="animate" ng-repeat="popular in popularList">
+            <div class="unimedia-cell">
+                <div class="unimedia-img">
+                    <a href="post.html" class="img-link"><img ng-src="{{ popular.MAIN_IMAGE }}" alt="" /></a>
+                </div>
+            </div>
+            <div class="unimedia-cell cell-max" style=" vertical-align: middle !important;">
+                <h4 class="unimedia-title fw-normal"><a ui-sref="postView({ id: popular.POST_SEQ })"  class="fw-normal title">{{ popular.POST_TITLE }}</a></h4>
+            </div>
+        </li>
+    </ul>
+    <!-- /post list -->

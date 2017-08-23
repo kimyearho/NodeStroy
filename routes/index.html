@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="nodeapp">
+<head>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-91682442-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Preprocessor searches for this literally, if changed update build pre-processor definition too -->
+    <base href="/">
+
+    <meta charset="utf-8">
+
+    <!-- meta -->
+    <title ng-bind="ngMeta.title"></title>
+    <meta name="description" content="{{ngMeta.description}}" />
+
+    <meta ng-if="ngMeta['og:title']" property="og:title"                content="{{ngMeta['og:title']}}" />
+    <meta ng-if="ngMeta['og:type']" property="og:type"                  content="{{ngMeta['og:type']}}" />
+    <meta ng-if="ngMeta['og:locale']" property="og:locale"              content="{{ngMeta['og:locale']}}" />
+    <meta ng-if="ngMeta['og:description']" property="og:description"    content="{{ngMeta['og:description']}}" />
+    <meta ng-if="ngMeta['og:image']" property="og:image"                content="{{ngMeta['og:image']}}" />
+    <meta property="fb:app_id" content="186709768436817"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/uikit-pink.css" rel="stylesheet">
+
+    <!-- cloud css -->
+    <link href="assets/css/cloud.css" rel="stylesheet">
+
+    <!-- animate -->
+    <link href="/node_modules/angular-ui-router-anim-in-out/css/anim-in-out.css" rel="stylesheet">
+</head>
+<body class="box">
+
+<!-- Navmenu -->
+<navmenu></navmenu>
+
+<!-- Content -->
+<section class="content">
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Row -->
+        <div class="row" style="margin-top: 110px;">
+            <!-- Main Col -->
+            <div class="col-md-8 main-col">
+                <div ui-view class="anim-in-out anim-fade" data-anim-speed="300"></div>
+            </div>
+            <!-- /Main Col -->
+
+            <!-- Side Col -->
+            <div class="col-md-4 side-col">
+
+                <!-- chat commons -->
+                <div ui-view="chatside"></div>
+
+                <!-- inner row -->
+                <div id="innerRow" class="row">
+
+                    <!-- col -->
+                    <div class="col-sm-6 col-md-11">
+                        <!-- unicard -->
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30 hidden-xs">
+                            <!-- post img -->
+                            <div class="post-img">
+                                <a class="img-link"><img ng-src="https://pbs.twimg.com/media/Csj0KKaVUAUYTFL.jpg" alt="" /></a>
+                                <div class="unicaption pad-20 img-layer grad-caption">
+                                    <h4 class="unicaption-title fw-bold case-u">
+                                        <a>아프지말자.</a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <!-- /post img -->
+                        </div>
+                        <!-- /unicard -->
+                    </div>
+                    <!-- /col -->
+
+                    <!-- RealTime users -->
+                    <div class="col-sm-6 col-md-11">
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30" style="border: 2px dashed #3F51B5;">
+                            <h4 class="case-u fw-bold fg-primary">＃실시간 접속인원</h4>
+                            <div style="text-align: center;">
+                                <h1 id="userCount" style="display: inline-block;"></h1> <span>명</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- APlayer -->
+                    <div class="col-sm-6 col-md-11">
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30">
+                            <h4 class="case-u fw-bold fg-primary">＃music</h4>
+                            <div id="player4" class="aplayer"></div>
+                        </div>
+                    </div>
+
+                    <!-- widget -->
+                    <div class="col-sm-6 col-md-11">
+                        <div class="unicard unicard-default side-widget mgb-30" style="padding: 20px;">
+                            <h4 class="case-u fw-bold fg-primary">＃widget</h4>
+                            <ul class="unimedia-list post-list-sm">
+                                <li>
+                                    <div wl-ng-weather theme="widget1" location="seoul"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /widget -->
+
+                    <!-- popular List -->
+                    <div class="col-sm-6 col-md-11 hidden-xs">
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30" style="border: 2px dashed #3F51B5;">
+                            <h4 class="case-u fw-bold fg-primary">＃웹툰 다운로드 매니저 FX</h4>
+                            <img ng-src="images/webtoon_main.jpg" />
+                            <a class="btn btn-primary" ng-href="http://nodestory.com/webtoonManager.html" target="_blank" style="width:100%;color: #fff;">클릭하여 이동하기</a>
+                        </div>
+                    </div>
+
+                    <!-- popular List -->
+                    <div class="col-sm-6 col-md-11 hidden-xs">
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30" style="border: 2px dashed #3F51B5;">
+                            <h4 class="case-u fw-bold fg-primary">＃FF14 GLOBAL UI 클라우드</h4>
+                            <img ng-src="http://www.finalfantasyxiv.com/fankit_40/jf5setg1sl/ffxiv_pcw36001_2560x1440.jpg" />
+                            <a class="btn btn-primary" style="width:100%;color: #fff;" ng-href="https://github.com/kimyearho/ffxivclound" target="_blank">클릭하여 이동하기</a>
+                        </div>
+                    </div>
+
+                    <!-- popular List
+                    <div class="col-sm-6 col-md-12 hidden-xs">
+                        <div class="unicard unicard-default pad-20 side-widget mgb-30">
+                            <popular></popular>
+                        </div>
+                    </div>
+                    -->
+                    <!-- /col -->
+
+                </div>
+                <!-- /inner row -->
+            </div>
+            <!-- /Side Col -->
+        </div>
+        <!-- /Row -->
+    </div>
+    <!-- /Container -->
+</section>
+<!-- /Content -->
+
+<!-- Mini Footer -->
+<footer class="mini-footer bd-t" style="position: relative;background-color: #263238;">
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- uninav -->
+        <ul class="uninav auto-invert case-c uninav-sm text-center uninav-uline">
+            <li class="hidden-xs"><a href="#"><b class="fg-primary">TRENDING:</b></a></li>
+            <li><a href="#">#PS4</a></li>
+            <li><a href="#">#2017</a></li>
+            <li><a href="#">#스타트업</a></li>
+            <li><a href="#">#한글화게임</a></li>
+            <li><a href="#">#웹툰 다운로드 매니저</a></li>
+        </ul>
+        <!-- /uninav -->
+
+    </div>
+    <!-- /Container -->
+
+</footer>
+<!-- /Mini Footer -->
+
+<input type="hidden" id="nickname" value=""/>
+
+<!-- Build Core -->
+<script src="assets/js/build/vendor.js"></script>
+<script src="post/build/vendor.cl.js"></script>
+<script src="/node_modules/angular-utils-disqus/dirDisqus.js"></script>
+<script src="/node_modules/angular-easyfb/build/angular-easyfb.min.js"></script>
+
+<!-- Node modules -->
+<script src="assets/js/build/module.js"></script>
+<script src="assets/js/client.js"></script>
+
+<!-- google map -->
+<script src='https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDLjMdWtsOTMiF-hIdMraLG3bVFumUfnWM'></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<link href="assets/css/slider.css" rel="stylesheet">
+
+<div class="wrapper_view">
+
+<!-- Unicard -->
+<div class="unicard unicard-framed post-highlight bdc-primary mgb-30 anim-fade">
+
+  <!-- unicard block -->
+  <div class="unicard-block post-header">
+    <h4 class="post-subtitle case-u fg-primary fw-bold">{{postData.C_NAME}}</h4>
+    <h1 class="post-title fw-bold fs-xs-250">{{postData.POST_TITLE}}</h1>
+  </div>
+  <!-- /unicard block -->
+
+  <!-- unicard block -->
+  <div class="unicard-block post-author">
+
+    <!-- unimedia -->
+    <div class="unimedia" style="background-color: rgba(251, 251, 251, 0.67);">
+      <div class="unimedia-cell cell-min">
+        <a class="unimedia-img"><img style="border: 1px solid #ddd;width: 90px;height: 60px;" ng-src="{{postData.PROFILE_IMAGE}}" alt="" ></a>
+      </div>
+      <div class="unimedia-cell cell-max v-mid">
+        <h5 class="mgb-5" style="font-weight: 700;"><img src="images/icon/95.gif" /> 파삭</a></h5>
+        <ul class="uninav" style="padding-top: 3px;">
+            <li>
+                <a class="admin_badge1 btn btn-pad-lg btn-primary">관리자</a>
+                <a style="margin-left: 10px;" class="admin_badge1 btn btn-pad-lg btn-node">노드블</a>
+            </li>
+        </ul>
+      </div>
+      <div class="unimedia-cell cell-min text-right v-mid hidden-xs" style="padding-right: 5px;">
+        <b>Posted: {{postData.TIMER}}</b><br>
+        <small class="fg-text-l"><i class="fa fa-location-arrow fa-5x mgr-5"></i>175.124.***.***</small>
+      </div>
+    </div>
+    <!-- /unimedia -->
+  </div>
+  <!-- /unicard block -->
+
+  <!-- article block -->
+  <div class="unicard-block post-article">
+      <div class="origin">
+          <span>출처 ： </span><a target="_blank" ng-href="{{ postData.SOURCE_ORIGIN }}"><strong class="fg-primary">{{ postData.SOURCE_ORIGIN }}</strong></a>
+      </div>
+    <div ng-bind-html="renderHtml(postData.POST_BODY)"></div>
+
+    <!-- post share -->
+    <div class="post-share">
+        <!-- post share -->
+            <h5>Etc Share this story</h5>
+            <ul class="uninav uninav-icons color-icons-bg uninav-sm">
+                <li>
+                    <a ng-click="share(postData)" href="javascript:;" class="fb-share-button">
+                        <img class="share_icon" src="images/1476360313_Facebook.png" />
+                    </a>
+                </li>
+                <li style="margin-left: 5px;">
+                    <a class="cursor" ng-click="twitterShare(postData)" socialshare socialshare-provider="twitter">
+                        <img class="share_icon" style="border-radius: 2px;" src="images/1476361212_square-twitter.png" width="25"/>
+                    </a>
+                </li>
+            </ul>
+    </div>
+    <!-- /post share -->
+
+  </div>
+  <!-- /article block -->
+
+</div>
+<!-- /unicard -->
+
+<div style="margin-bottom: 30px;">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- 상세페이지 광고 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2659362976819715"
+         data-ad-slot="1157481581"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
+
+<div class="related">
+    <!-- Related -->
+    <div class="unicard unicard-framed post-highlight bdc-navcolor pad-30 mgb-30 hidden-xs" style="border-color: #263238;">
+        <h4 class="case-u fw-bold fg-primary">또 다른 Post</h4>
+        <div class="row gutter-20 spaced">
+            <div class="col-sm-4" ng-repeat="post in postRandom">
+                <!-- unicard img -->
+                <div class="unicard-img">
+                    <img class="related_cover" ng-src="{{post.MAIN_IMAGE}}" alt="" />
+                </div>
+                <div class="unicard-picket-sm text-center">
+                    <h5 class="unicard-title post-title">
+                        <a class="cursor" ng-click="postLink(post.POST_SEQ)"><strong>{{post.POST_TITLE}}</strong></a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Related -->
+ </div>
+
+ <div class="unicard unicard-framed pad-30 mgb-30">
+     <dir-disqus config="disqusConfig"></dir-disqus>
+ </div>
+
+</div>

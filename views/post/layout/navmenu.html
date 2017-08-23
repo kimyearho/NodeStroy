@@ -1,0 +1,167 @@
+<style>
+    .mega-menu .extras-block h4 {
+        text-transform: uppercase;
+        color: #ee304c;
+        margin: 0px;
+    }
+</style>
+<!-- Main Navbar -->
+<nav class="main-navbar unibar unibar-lg shadow-card bg-base unibar-inverse shadow-card">
+    <!-- unibar container -->
+    <div class="container unibar-container bg-inherit">
+        <!-- header block -->
+        <div class="unibar-block header-block bg-primary hide-border">
+            <!-- brand cell -->
+            <div class="unibar-cell menucon-cell">
+                <a id="navmenu" href="#" class="menucon morphs" data-ctoggle="unhide" data-target="#fullmenu"><span></span></a>
+            </div>
+            <!-- /brand cell -->
+            <!-- brand cell -->
+            <div class="unibar-cell brand-cell hidden-xs">
+                <a ng-href="/" class="unibar-brand fw-bold">NodeStory</a>
+            </div>
+            <!-- /brand cell -->
+            <!-- brand cell -->
+            <div class="unibar-cell brand-cell visible-xs-block">
+                <a ng-href="/" class="unibar-brand fw-bold" style="margin-right: 10px; margin-top: 10px;">NodeStory</a>
+            </div>
+            <!-- /brand cell -->
+            <!-- brand cell -->
+            <div class="unibar-cell search-toggle-cell">
+            </div>
+            <!-- /brand cell -->
+        </div>
+        <!-- /header block -->
+
+        <!-- nav block -->
+        <div class="unibar-block nav-block bg-inherit">
+            <!-- nav cell -->
+            <div class="unibar-cell nav-cell cell-max">
+                <!-- unibar search -->
+                <form class="unibar-search">
+                    <div class="search-box">
+                        <input class="text-box" type="text" placeholder="Search anything...">
+                        <button type="button" class="btn btn-primary case-u"><i class="fa-search mgr-5"></i>search</button>
+                    </div>
+                </form>
+                <!-- /unibar search -->
+
+                <!-- mobile quick links -->
+                <div class="visible-sm visible-xs">
+                    <!-- uninav -->
+                    <ul id="nav" class="uninav unibar-uninav uninav-fga-primary uninav-fillh auto-invert case-u fw-bold text-center">
+                        <li class="active"><a ng-href="/">home</a></li>
+                        <li class=""><a data-ctoggle="unhide" data-target="#menu-col1">more<i class="fs-80 ti-plus dd-icon toggled-rotz-135"></i></a>
+                    </ul>
+                    <!-- /uninav -->
+                </div>
+                <!-- /mobile quick links -->
+
+                <!-- collapsible menu -->
+                <div id="menu-col1" class="unibar-collapse-sm">
+                    <!-- uninav -->
+                    <ul class="uninav unibar-uninav uninav-fga-primary uninav-fillh auto-invert case-u fw-bold">
+                        <li class="active cursor"><a ng-href="/">home</a></li>
+                    </ul>
+                    <!-- /uninav -->
+                </div>
+                <!-- collapsible menu -->
+
+            </div>
+            <!-- /nav cell -->
+
+            <!-- cell -->
+            <div class="unibar-cell hidden-xs hidden-sm cell-min">
+                {{ clock | date:'medium'}}
+            </div>
+            <!-- /cell -->
+
+        </div>
+        <!-- /nav block -->
+
+        <!-- mega menu -->
+        <div id="fullmenu" class="mega-menu efx-slide-down">
+            <!-- Cont -->
+            <div class="menu-cont">
+                <!-- Col -->
+                <div class="cont-col nav-col bg-primary-d">
+                    <ul class="uninav uninav-v uninav-inverse uninav-lline uninav-bga-accent-xl uninav-fga-accent-xl uninav-default case-u uninav-ruled">
+                        <li><a ng-href="/">home</a></li>
+                        <li><a ng-href="/it">it / mobile</a></li>
+                        <li><a ng-href="/games">ps / games</a></li>
+                        <li><a ng-href="/myStory">나의 이야기</a></li>
+                    </ul>
+                </div>
+                <!-- /Col -->
+
+                <style>
+                    .galleryItem {
+                        width: 20%;
+                        margin: 0% 3% 0 2%;
+                        float: left;
+                        -webkit-transition: color 0.5s ease;
+                    }
+
+                    .galleryItem h3 {
+                        text-transform: uppercase;
+                        line-height: 2;
+                    }
+
+                    .galleryItem:hover {
+                        color: #000;
+                    }
+
+                    .galleryItem img {
+                        max-width: 100%;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        border-radius: 5px;
+                    }
+
+                    /* MEDIA QUERIES*/
+                    @media only screen and (max-width : 940px),
+                    only screen and (max-device-width : 940px){
+                        .galleryItem {width: 21%;}
+                    }
+                    .galleryItem a:hover {
+                        font-weight: 700;
+                    }
+                </style>
+
+                <!-- Col -->
+                <div class="cont-col extras-col hidden-xs">
+
+                    <!-- extras block -->
+                    <div class="extras-block" style="padding: 20px;">
+                        <!-- row -->
+                        <h4 style="padding-bottom: 15px;color: #009688;">＃Breaking stories</h4>
+                        <div class="row">
+                            <div>
+                                <div class="galleryItem" ng-repeat="topList in topBreaknewsList">
+                                        <img style="width:300px; height: 90px;  border: 1px solid #ddd;" src="{{topList.MAIN_IMAGE}}" alt="" />
+                                    <p style="font-size: 12px;padding-top: 5px;"><a style="color:#000;" ui-sref="postView({ id: topList.POST_SEQ })">{{topList.POST_TITLE}}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /extras block -->
+
+                    <!-- extras block -->
+                    <div class="extras-block extras-col hidden-xs" style="padding: 20px 30px 30px 30px;">
+                        <div class="row">
+                            <h4 style="padding-bottom: 15px;color: #009688;">＃Social Link</h4>
+                            <social></social>
+                        </div>
+                    </div>
+                    <!-- /extras block -->
+                </div>
+                <!-- /Col -->
+            </div>
+            <!-- /Cont -->
+        </div>
+        <!-- /mega menu -->
+    </div>
+    <!-- /unibar Cont -->
+</nav>
+<!-- /Main Navbar -->

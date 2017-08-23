@@ -1,0 +1,155 @@
+<div id="style-switcher" class="switcher">
+  <a class="switcher-toggle unicon shadow-card" href="#" data-ctoggle="unhide" data-target="#style-switcher"><i class="fa-cog"></i></a>
+  <div class="switcher-panel shadow-card">
+    <div class="switcher-block">
+      <h5>Primary Colors</h5>
+      <div class="row gutter-6 spaced switcher-grid hov-efx-fade skin-changer">
+        <div class="col-xs-2">
+          <a class="bg-gold" href="#uikit-gold.css" title="Gold">&nbsp;</a>
+        </div>
+        <div class="col-xs-2">
+          <a class="bg-red" href="#uikit-red.css" title="Red">&nbsp;</a>
+        </div>
+        <div class="col-xs-2">
+          <a class="bg-pink" href="#uikit-pink.css" title="Pink">&nbsp;</a>
+        </div>
+        
+        <div class="col-xs-2">
+          <a class="grad-red-pink-fb" href="#uikit-rose.css" title="Rose">&nbsp;</a>
+        </div>
+        
+        <div class="col-xs-2">
+          <a class="bg-teal" href="#uikit-teal.css" title="Teal">&nbsp;</a>
+        </div>
+        <div class="col-xs-2">
+          <a class="grad-green-lime-fb" href="#uikit-green.css" title="Green">&nbsp;</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="switcher-block">
+      <h5>General Theme</h5>
+      <div class="radio">
+        <label class="radio-inline radio-styled mgb-15">Clean
+          <input class="radio-v1" type="radio" name="gentheme" value="clean" checked>
+          <span class="indicator bdc-after-cyan bg-before-cyan"></span>
+        </label>
+      </div>
+      
+      <div class="radio">
+        <label class="radio-inline radio-styled mgb-15">Subtle
+          <input class="radio-v1" type="radio" name="gentheme" value="subtle">
+          <span class="indicator bdc-after-cyan bg-before-cyan"></span>
+        </label>
+      </div>
+      
+      <div class="radio">
+        <label class="radio-inline radio-styled">Raised Cards
+          <input class="radio-v1" type="radio" name="gentheme" value="raised">
+          <span class="indicator bdc-after-green bg-before-green"></span>
+        </label>
+      </div>
+
+    </div>
+    
+    <div class="switcher-block">
+      <h5>Navbar Theme</h5>
+      <div class="radio-inline">
+        <label class="radio-styled">Light
+          <input class="radio-v1" type="radio" name="barcolor" value="light" checked>
+          <span class="indicator bdc-after-cyan bg-before-cyan"></span>
+        </label>
+      </div>
+      
+      <div class="radio-inline">
+        <label class="radio-styled">Dark
+          <input class="radio-v1" type="radio" name="barcolor" value="dark">
+          <span class="indicator bdc-after-green bg-before-green"></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="switcher-block">
+      <h5>Footer Theme</h5>
+      <div class="radio-inline">
+        <label class="radio-styled">Light
+          <input class="radio-v1" type="radio" name="footercolor" value="light" checked>
+          <span class="indicator bdc-after-cyan bg-before-cyan"></span>
+        </label>
+      </div>
+      
+      <div class="radio-inline">
+        <label class="radio-styled">Dark
+          <input class="radio-v1" type="radio" name="footercolor" value="dark">
+          <span class="indicator bdc-after-green bg-before-green"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  $("[name='gentheme']").click(function(e) {
+
+    switch($(this).val()) {
+      case "clean":
+        $(".main-navbar").removeClass("shadow-card");
+        if(!$(".main-navbar").hasClass("unibar-inverse")) $(".main-navbar").addClass("bd-b");
+        $(".content").removeClass("bg-black-3");
+        $(".unicard").removeClass("unicard-default").addClass("unicard-framed");
+      break;
+      
+      case "subtle":
+        $(".main-navbar").removeClass("shadow-card");
+        if(!$(".main-navbar").hasClass("unibar-inverse")) $(".main-navbar").addClass("bd-b");
+        $(".content").addClass("bg-black-3");
+        $(".unicard").removeClass("unicard-default").addClass("unicard-framed");
+      break;
+      
+      case "raised":
+        $(".main-navbar").addClass("shadow-card").removeClass("bd-b");
+        $(".content").addClass("bg-black-3");
+        $(".unicard").removeClass("unicard-framed").addClass("unicard-default");
+      break;
+    }
+  });
+
+  $("[name='barcolor']").click(function(e) {
+
+    switch($(this).val()) {
+      case "light":
+        $(".main-navbar").removeClass("bg-base unibar-inverse").addClass("bg-white");
+        if(!$(".main-navbar").hasClass("shadow-card")) $(".main-navbar").addClass("bd-b");
+      break;
+      
+      case "dark":
+        $(".main-navbar").addClass("bg-base unibar-inverse").removeClass("bg-white bd-b");
+      break;
+    }
+  });
+  
+  $("[name='footercolor']").click(function(e) {
+
+    switch($(this).val()) {
+      case "light":
+        $(".mini-footer").removeClass("bg-base inverse-all").addClass("bg-white bd-t");
+      break;
+      
+      case "dark":
+        $(".mini-footer").addClass("bg-base inverse-all").removeClass("bg-white bd-t");
+      break;
+    }
+  });
+  
+  $(".skin-changer a").click(function(e) {
+    e.preventDefault();
+    var $linkTag = $("#demo-sheet");
+    if(! $linkTag.exists()) {
+      $("head").append('<link id="demo-sheet" rel="stylesheet" href="">');
+      $linkTag = $("#demo-sheet");
+    }
+    var sheet = "assets/css/" + $(this).attr("href").replace("#", "");
+    $linkTag.attr("href", sheet);
+  });
+</script>

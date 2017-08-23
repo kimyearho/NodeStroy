@@ -1,0 +1,82 @@
+.bg-panel-primary {
+    padding: 15px;
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.bg-well-primary {
+    color: #fff;
+    border: none !important;
+    background-color: hsl(201, 100%, 36%) !important;
+}
+
+.bg-panel-info {
+    padding: 5px;
+    color: #ee304c;
+    background-color: #d9edf7;
+}
+
+.bg-panel-min {
+    padding: 15px;
+    color: #000000;
+    background-color: #d9edf7;
+}
+
+.admin_badge1 {
+    padding: 1px 5px 1px 5px !important;
+    display: inline-block !important;
+    border-radius: 2px;
+}
+.btn-node {
+    color: #fff;
+    background-color: #673AB7;
+    border-color: #673AB7;
+}
+.share_icon {
+    width:35px;
+    height:35px;
+}
+
+.origin {
+    padding: 10px 10px 10px 0px;
+    border-bottom: 1px dotted #ddd;
+    margin-bottom: 20px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+.related {
+    visibility: hidden;
+}
+.related_cover {
+    max-height: 110px !important;
+    border: 1px solid #ddd;
+}
+
+.post_date {
+    font-size: 12px;
+    float: right;
+    padding-top: 5px;
+    color: #b1b1b1;
+}
+
+.post_link {
+    cursor: pointer;
+    padding-left: 5px;
+    font-weight: 700;
+    color: #009688 !important;
+}
+
+/* 이미지를 자동으로 화면에 맞게 리사이즈 되도록 */
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+iframe {
+    width : 100%;
+    max-width: 100%; /* 이미지의 최대사이즈 */
+    vertical-align: bottom;
+}
