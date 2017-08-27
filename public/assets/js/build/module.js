@@ -7,12 +7,24 @@
 var ap4 = new APlayer({
     element: document.getElementById('player4'),
     narrow: false,
-    autoplay: false,
+    autoplay: true,
     showlrc: false,
     mutex: true,
     theme: '#ad7a86',
-    mode: 'random',
+    mode: 'circulation',
     music: [
+        {
+            title: 'Tokyo Ghoul OST - Light and Shadow',
+            author: '',
+            url: 'assets/music/Tokyo Ghoul OST - Light and Shadow.mp3',
+            pic: 'assets/music/cover/tyo.jpg'
+        },
+        {
+            title: 'Tokyo Ghoul OST - Glassy Sky',
+            author: '',
+            url: 'assets/music/Tokyo Ghoul OST - Glassy Sky (Donna Burke).mp3',
+            pic: 'assets/music/cover/Tokyo Ghoul OST - Glassy Sky.jpg'
+        },
         {
             title: 'Tsubasa OST - I Talk to the Rain',
             author: '',
@@ -32,18 +44,6 @@ var ap4 = new APlayer({
             pic: 'assets/music/cover/ff7ac.jpg'
         },
         {
-            title: 'Tokyo Ghoul OST - Glassy Sky',
-            author: '',
-            url: 'assets/music/Tokyo Ghoul OST - Glassy Sky (Donna Burke).mp3',
-            pic: 'assets/music/cover/Tokyo Ghoul OST - Glassy Sky.jpg'
-        },
-        {
-            title: 'Tokyo Ghoul OST - Light and Shadow',
-            author: '',
-            url: 'assets/music/Tokyo Ghoul OST - Light and Shadow.mp3',
-            pic: 'assets/music/cover/tyo.jpg'
-        },
-        {
             title: 'FullMetal Alchemist - Ray Of Light',
             author: '',
             url: 'assets/music/FullMetal Alchemist-Ray Of Light Theme(5th ED).mp3',
@@ -51,18 +51,6 @@ var ap4 = new APlayer({
         }
     ]
 });
-
-/* *
- {
- title: 'あっちゅ～ま青春!',
- author: '七森中☆ごらく部',
- url: 'http://devtest.qiniudn.com/あっちゅ～ま青春!.mp3',
- pic: 'http://devtest.qiniudn.com/あっちゅ～ま青春!.jpg'
- }
- * */
-
-
-
 
 (function() {
     'use strict';

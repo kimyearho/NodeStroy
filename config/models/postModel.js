@@ -156,8 +156,8 @@ var query = {
      * @returns {string}
      */
     postInsertPost : function() {
-        var query1 = "INSERT INTO T_POSTLIST (POST_TYPE, CATEGORY, POST_TITLE, POST_BODY, NONE_BODY, PROFILE_IMAGE, MAIN_IMAGE, TAG, TIMER, ACTIVE_YN, SOURCE_ORIGIN) ";
-        var query2 = " VALUES ('1100', ?, ?, ?, ?, ?, ?, '', NOW(), 'Y', ?)";
+        var query1 = "INSERT INTO T_POSTLIST (POST_TYPE, CATEGORY, POST_TITLE, POST_BODY, NONE_BODY, PROFILE_IMAGE, MAIN_IMAGE, SHARE_IMAGE, TAG, TIMER, ACTIVE_YN, SOURCE_ORIGIN) ";
+        var query2 = " VALUES ('1100', ?, ?, ?, ?, ?, ?, ?, '', NOW(), 'Y', ?)";
         return query1.concat(query2);
     },
 
@@ -166,8 +166,8 @@ var query = {
      * @returns {string}
      */
     postInsertBreaknews : function() {
-        var query1 = "INSERT INTO T_POSTLIST (POST_TYPE, CATEGORY, POST_TITLE, POST_BODY, PROFILE_IMAGE, MAIN_IMAGE, TAG, TIMER, ACTIVE_YN, SOURCE_ORIGIN) ";
-        var query2 = " VALUES ('1101', ?, ?, ?, ?, ?, '', NOW(), 'Y', ?)";
+        var query1 = "INSERT INTO T_POSTLIST (POST_TYPE, CATEGORY, POST_TITLE, POST_BODY, PROFILE_IMAGE, MAIN_IMAGE, SHARE_IMAGE, TAG, TIMER, ACTIVE_YN, SOURCE_ORIGIN) ";
+        var query2 = " VALUES ('1101', ?, ?, ?, ?, ?, ?, '', NOW(), 'Y', ?)";
         return query1.concat(query2);
     }
 

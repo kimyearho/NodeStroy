@@ -316,6 +316,7 @@ module.exports = function (app, db) {
             nonBody,
             'images/profile/profile.gif',
             req.body.postCoverImage,
+            req.body.postCoverImage,    // 공유 이미지
             req.body.origin_url,
         ]
 
@@ -356,8 +357,9 @@ module.exports = function (app, db) {
             req.body.postMark,
             req.body.postSubject,
             req.body.postContents,
-            'images/profile/profile.gif',
-            req.body.postCoverImage,
+            'images/profile/profile.gif', // 프로필 이미지
+            req.body.postCoverImage,    // 메인 이미지
+            req.body.postCoverImage,    // 공유 이미지
             req.body.origin_url
         ]
         db.getConnection(function (err, conn) {
